@@ -1,4 +1,4 @@
-namespace ChuongTrinh
+namespace Calculator
 {
     internal static class Program
     {
