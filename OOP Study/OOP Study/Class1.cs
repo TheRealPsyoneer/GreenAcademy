@@ -14,8 +14,14 @@ namespace OOP_Study
         public double Toan { get; private set; }
         public double AnhVan { get; private set; }
         public double Tin { get; private set; }
-        public double DiemTrungBinh { get; private set; }
-        public string XepLoai { get; private set; }
+        public double DiemTrungBinh => Math.Round((Toan + AnhVan + Tin) / 3, 1);
+        public string XepLoai
+        {
+            get
+            {
+                return XepLoaiHoc(DiemTrungBinh);
+            } 
+        }
         public Student(string maSinhVien, string hoTen, string lop, double toan, double anhVan, double tin)
         {
             MaSinhVien = maSinhVien;
@@ -24,30 +30,28 @@ namespace OOP_Study
             Toan = toan;
             AnhVan = anhVan;
             Tin = tin;
-            DiemTrungBinh = (Toan + AnhVan + Tin) / 3;
-            XepLoai = XepLoaiHoc(DiemTrungBinh);
         }
         string XepLoaiHoc(double dtb)
         {
             if (dtb >= 8)
             {
-                return "Gioi";
+                return "Giỏi";
             }
-            else if (dtb >= 6.5 && dtb < 8)
+            else if (dtb >= 6.5)
             {
-                return "Kha";
+                return "Khá";
             }
-            else if (dtb >= 5 && dtb < 6.5)
+            else if (dtb >= 5)
             {
-                return "Trung binh";
+                return "Trung bình";
             }
-            else if (dtb >= 3.5 && dtb <5)
+            else if (dtb >= 3.5)
             {
-                return "Yeu";
+                return "Yếu";
             }
             else
             {
-                return "Kem";
+                return "Kém";
             }
         }
     }

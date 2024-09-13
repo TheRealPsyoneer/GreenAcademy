@@ -28,254 +28,274 @@
         /// </summary>
         private void InitializeComponent()
         {
-            inputThuTu = new NumericUpDown();
-            hienThi = new Button();
-            maSo = new Label();
+            components = new System.ComponentModel.Container();
+            dataGridView1 = new DataGridView();
+            maSinhVienDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            hoTenDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lopDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            toanDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            anhVanDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tinDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            diemTrungBinhDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            xepLoaiDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            studentBindingSource = new BindingSource(components);
+            txb_code = new TextBox();
+            txb_name = new TextBox();
+            txb_class = new TextBox();
+            num_toan = new NumericUpDown();
+            num_anhvan = new NumericUpDown();
+            num_tin = new NumericUpDown();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
-            code = new Label();
-            name = new Label();
-            lop = new Label();
-            toan = new Label();
-            anhvan = new Label();
-            tin = new Label();
-            dtb = new Label();
-            xeploai = new Label();
-            ((System.ComponentModel.ISupportInitialize)inputThuTu).BeginInit();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_toan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_anhvan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)num_tin).BeginInit();
             SuspendLayout();
             // 
-            // inputThuTu
+            // dataGridView1
             // 
-            inputThuTu.Location = new Point(36, 12);
-            inputThuTu.Maximum = new decimal(new int[] { 2, 0, 0, 0 });
-            inputThuTu.Name = "inputThuTu";
-            inputThuTu.Size = new Size(120, 23);
-            inputThuTu.TabIndex = 0;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { maSinhVienDataGridViewTextBoxColumn, hoTenDataGridViewTextBoxColumn, lopDataGridViewTextBoxColumn, toanDataGridViewTextBoxColumn, anhVanDataGridViewTextBoxColumn, tinDataGridViewTextBoxColumn, diemTrungBinhDataGridViewTextBoxColumn, xepLoaiDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = studentBindingSource;
+            dataGridView1.Location = new Point(12, 327);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(951, 150);
+            dataGridView1.TabIndex = 18;
             // 
-            // hienThi
+            // maSinhVienDataGridViewTextBoxColumn
             // 
-            hienThi.Location = new Point(300, 12);
-            hienThi.Name = "hienThi";
-            hienThi.Size = new Size(175, 46);
-            hienThi.TabIndex = 1;
-            hienThi.Text = "Hiển Thị Thông Tin";
-            hienThi.UseVisualStyleBackColor = true;
-            hienThi.Click += hienThi_Click;
+            maSinhVienDataGridViewTextBoxColumn.DataPropertyName = "MaSinhVien";
+            maSinhVienDataGridViewTextBoxColumn.HeaderText = "Mã Sinh Viên";
+            maSinhVienDataGridViewTextBoxColumn.Name = "maSinhVienDataGridViewTextBoxColumn";
+            maSinhVienDataGridViewTextBoxColumn.ReadOnly = true;
+            maSinhVienDataGridViewTextBoxColumn.Width = 150;
             // 
-            // maSo
+            // hoTenDataGridViewTextBoxColumn
             // 
-            maSo.AutoSize = true;
-            maSo.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            maSo.Location = new Point(61, 112);
-            maSo.Name = "maSo";
-            maSo.Size = new Size(123, 25);
-            maSo.TabIndex = 2;
-            maSo.Text = "Mã sinh viên:";
+            hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            hoTenDataGridViewTextBoxColumn.HeaderText = "Họ Tên";
+            hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lopDataGridViewTextBoxColumn
+            // 
+            lopDataGridViewTextBoxColumn.DataPropertyName = "Lop";
+            lopDataGridViewTextBoxColumn.HeaderText = "Lớp";
+            lopDataGridViewTextBoxColumn.Name = "lopDataGridViewTextBoxColumn";
+            lopDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // toanDataGridViewTextBoxColumn
+            // 
+            toanDataGridViewTextBoxColumn.DataPropertyName = "Toan";
+            toanDataGridViewTextBoxColumn.HeaderText = "Toán";
+            toanDataGridViewTextBoxColumn.Name = "toanDataGridViewTextBoxColumn";
+            toanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // anhVanDataGridViewTextBoxColumn
+            // 
+            anhVanDataGridViewTextBoxColumn.DataPropertyName = "AnhVan";
+            anhVanDataGridViewTextBoxColumn.HeaderText = "Anh Văn";
+            anhVanDataGridViewTextBoxColumn.Name = "anhVanDataGridViewTextBoxColumn";
+            anhVanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tinDataGridViewTextBoxColumn
+            // 
+            tinDataGridViewTextBoxColumn.DataPropertyName = "Tin";
+            tinDataGridViewTextBoxColumn.HeaderText = "Tin";
+            tinDataGridViewTextBoxColumn.Name = "tinDataGridViewTextBoxColumn";
+            tinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diemTrungBinhDataGridViewTextBoxColumn
+            // 
+            diemTrungBinhDataGridViewTextBoxColumn.DataPropertyName = "DiemTrungBinh";
+            diemTrungBinhDataGridViewTextBoxColumn.HeaderText = "Điểm Trung Bình";
+            diemTrungBinhDataGridViewTextBoxColumn.Name = "diemTrungBinhDataGridViewTextBoxColumn";
+            diemTrungBinhDataGridViewTextBoxColumn.ReadOnly = true;
+            diemTrungBinhDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // xepLoaiDataGridViewTextBoxColumn
+            // 
+            xepLoaiDataGridViewTextBoxColumn.DataPropertyName = "XepLoai";
+            xepLoaiDataGridViewTextBoxColumn.HeaderText = "Xếp Loại";
+            xepLoaiDataGridViewTextBoxColumn.Name = "xepLoaiDataGridViewTextBoxColumn";
+            xepLoaiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentBindingSource
+            // 
+            studentBindingSource.DataSource = typeof(Student);
+            // 
+            // txb_code
+            // 
+            txb_code.Location = new Point(140, 61);
+            txb_code.Name = "txb_code";
+            txb_code.Size = new Size(100, 23);
+            txb_code.TabIndex = 19;
+            // 
+            // txb_name
+            // 
+            txb_name.Location = new Point(269, 61);
+            txb_name.Name = "txb_name";
+            txb_name.Size = new Size(100, 23);
+            txb_name.TabIndex = 20;
+            // 
+            // txb_class
+            // 
+            txb_class.Location = new Point(397, 61);
+            txb_class.Name = "txb_class";
+            txb_class.Size = new Size(100, 23);
+            txb_class.TabIndex = 21;
+            // 
+            // num_toan
+            // 
+            num_toan.Location = new Point(529, 62);
+            num_toan.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            num_toan.Name = "num_toan";
+            num_toan.Size = new Size(98, 23);
+            num_toan.TabIndex = 22;
+            // 
+            // num_anhvan
+            // 
+            num_anhvan.Location = new Point(661, 61);
+            num_anhvan.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            num_anhvan.Name = "num_anhvan";
+            num_anhvan.Size = new Size(98, 23);
+            num_anhvan.TabIndex = 23;
+            // 
+            // num_tin
+            // 
+            num_tin.Location = new Point(792, 61);
+            num_tin.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            num_tin.Name = "num_tin";
+            num_tin.Size = new Size(98, 23);
+            num_tin.TabIndex = 24;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(86, 137);
+            label1.Location = new Point(143, 32);
             label1.Name = "label1";
-            label1.Size = new Size(98, 25);
-            label1.TabIndex = 3;
-            label1.Text = "Họ và Tên:";
+            label1.Size = new Size(76, 15);
+            label1.TabIndex = 25;
+            label1.Text = "Mã Sinh Viên";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(137, 162);
+            label2.Location = new Point(269, 32);
             label2.Name = "label2";
-            label2.Size = new Size(47, 25);
-            label2.TabIndex = 4;
-            label2.Text = "Lớp:";
+            label2.Size = new Size(44, 15);
+            label2.TabIndex = 26;
+            label2.Text = "Họ Tên";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(79, 187);
+            label3.Location = new Point(397, 32);
             label3.Name = "label3";
-            label3.Size = new Size(105, 25);
-            label3.TabIndex = 5;
-            label3.Text = "Điểm Toán:";
+            label3.Size = new Size(27, 15);
+            label3.TabIndex = 27;
+            label3.Text = "Lớp";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(48, 212);
+            label4.Location = new Point(529, 32);
             label4.Name = "label4";
-            label4.Size = new Size(136, 25);
-            label4.TabIndex = 6;
-            label4.Text = "Điểm Anh Văn:";
+            label4.Size = new Size(32, 15);
+            label4.TabIndex = 28;
+            label4.Text = "Toán";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(93, 237);
+            label5.Location = new Point(661, 32);
             label5.Name = "label5";
-            label5.Size = new Size(91, 25);
-            label5.TabIndex = 7;
-            label5.Text = "Điểm Tin:";
+            label5.Size = new Size(51, 15);
+            label5.TabIndex = 29;
+            label5.Text = "Anh Văn";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(28, 262);
+            label6.Location = new Point(792, 32);
             label6.Name = "label6";
-            label6.Size = new Size(156, 25);
-            label6.TabIndex = 8;
-            label6.Text = "Điểm Trung Bình:";
+            label6.Size = new Size(23, 15);
+            label6.TabIndex = 30;
+            label6.Text = "Tin";
             // 
-            // label7
+            // button1
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(100, 287);
-            label7.Name = "label7";
-            label7.Size = new Size(84, 25);
-            label7.TabIndex = 9;
-            label7.Text = "Xếp loại:";
-            // 
-            // code
-            // 
-            code.AutoSize = true;
-            code.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            code.Location = new Point(190, 112);
-            code.Name = "code";
-            code.Size = new Size(53, 25);
-            code.TabIndex = 10;
-            code.Text = "code";
-            // 
-            // name
-            // 
-            name.AutoSize = true;
-            name.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            name.Location = new Point(190, 137);
-            name.Name = "name";
-            name.Size = new Size(59, 25);
-            name.TabIndex = 11;
-            name.Text = "name";
-            // 
-            // lop
-            // 
-            lop.AutoSize = true;
-            lop.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            lop.Location = new Point(190, 162);
-            lop.Name = "lop";
-            lop.Size = new Size(52, 25);
-            lop.TabIndex = 12;
-            lop.Text = "class";
-            // 
-            // toan
-            // 
-            toan.AutoSize = true;
-            toan.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            toan.Location = new Point(190, 187);
-            toan.Name = "toan";
-            toan.Size = new Size(50, 25);
-            toan.TabIndex = 13;
-            toan.Text = "toan";
-            // 
-            // anhvan
-            // 
-            anhvan.AutoSize = true;
-            anhvan.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            anhvan.Location = new Point(190, 212);
-            anhvan.Name = "anhvan";
-            anhvan.Size = new Size(74, 25);
-            anhvan.TabIndex = 14;
-            anhvan.Text = "anhvan";
-            // 
-            // tin
-            // 
-            tin.AutoSize = true;
-            tin.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            tin.Location = new Point(190, 237);
-            tin.Name = "tin";
-            tin.Size = new Size(34, 25);
-            tin.TabIndex = 15;
-            tin.Text = "tin";
-            // 
-            // dtb
-            // 
-            dtb.AutoSize = true;
-            dtb.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            dtb.Location = new Point(190, 262);
-            dtb.Name = "dtb";
-            dtb.Size = new Size(40, 25);
-            dtb.TabIndex = 16;
-            dtb.Text = "dtb";
-            // 
-            // xeploai
-            // 
-            xeploai.AutoSize = true;
-            xeploai.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            xeploai.Location = new Point(190, 287);
-            xeploai.Name = "xeploai";
-            xeploai.Size = new Size(73, 25);
-            xeploai.TabIndex = 17;
-            xeploai.Text = "xeploai";
+            button1.Location = new Point(437, 115);
+            button1.Name = "button1";
+            button1.Size = new Size(155, 54);
+            button1.TabIndex = 31;
+            button1.Text = "Thêm sinh viên";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(xeploai);
-            Controls.Add(dtb);
-            Controls.Add(tin);
-            Controls.Add(anhvan);
-            Controls.Add(toan);
-            Controls.Add(lop);
-            Controls.Add(name);
-            Controls.Add(code);
-            Controls.Add(label7);
+            ClientSize = new Size(978, 526);
+            Controls.Add(button1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(maSo);
-            Controls.Add(hienThi);
-            Controls.Add(inputThuTu);
+            Controls.Add(num_tin);
+            Controls.Add(num_anhvan);
+            Controls.Add(num_toan);
+            Controls.Add(txb_class);
+            Controls.Add(txb_name);
+            Controls.Add(txb_code);
+            Controls.Add(dataGridView1);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)inputThuTu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_toan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_anhvan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)num_tin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private NumericUpDown inputThuTu;
-        private Button hienThi;
-        private Label maSo;
+        private DataGridView dataGridView1;
+        private BindingSource studentBindingSource;
+        private DataGridViewTextBoxColumn maSinhVienDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lopDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn toanDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn anhVanDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tinDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn diemTrungBinhDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn xepLoaiDataGridViewTextBoxColumn;
+        private TextBox txb_code;
+        private TextBox txb_name;
+        private TextBox txb_class;
+        private NumericUpDown num_toan;
+        private NumericUpDown num_anhvan;
+        private NumericUpDown num_tin;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label7;
-        private Label code;
-        private Label name;
-        private Label lop;
-        private Label toan;
-        private Label anhvan;
-        private Label tin;
-        private Label dtb;
-        private Label xeploai;
+        private Button button1;
     }
 }

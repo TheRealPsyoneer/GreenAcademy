@@ -1,37 +1,50 @@
+﻿using System.ComponentModel;
+
 namespace OOP_Study
 {
     public partial class Form1 : Form
     {
-        List<IStudent> lopA = new List<IStudent>();
+        List<Student> lopA = new List<Student>();
+        public BindingList<Student> bindingList;
         public Form1()
         {
             InitializeComponent();
-            
+
             lopA.Add(new Student("213001", "Nguyen Van A", "QL131", 8, 8.8, 6.8));
             lopA.Add(new Student("213002", "Nguyen Van B", "QL141", 4, 5, 7));
             lopA.Add(new Student("213003", "Nguyen Thi C", "QL141", 6, 2, 4));
-            code.Text = "";
-            name.Text = "";
-            lop.Text = "";
-            toan.Text = "";
-            anhvan.Text = "";
-            tin.Text = "";
-            dtb.Text = "";
-            xeploai.Text = "";
-
+            bindingList = new BindingList<Student>(lopA);
+            var bindingSource = new BindingSource(bindingList, null);
+            dataGridView1.DataSource = bindingSource;
         }
 
-        private void hienThi_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            code.Text = lopA[(int)inputThuTu.Value].MaSinhVien;
-            name.Text = lopA[(int)inputThuTu.Value].HoTen;
-            lop.Text = lopA[(int)inputThuTu.Value].Lop;
-            toan.Text = lopA[(int)inputThuTu.Value].Toan.ToString();
-            anhvan.Text = lopA[(int)inputThuTu.Value].AnhVan.ToString();
-            tin.Text = lopA[(int)inputThuTu.Value].Tin.ToString();
-            //dtb.Text = lopA[(int)inputThuTu.Value].DiemTrungBinh.ToString("#.#");
-            dtb.Text = lopA[(int)inputThuTu.Value].DiemTrungBinh.ToString("#.#");
-            xeploai.Text = lopA[(int)inputThuTu.Value].XepLoai;
+            if (string.IsNullOrEmpty(txb_code.Text))
+            {
+                MessageBox.Show("Mã sinh viên không được để trống");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txb_name.Text))
+            {
+                MessageBox.Show("Tên sinh viên không được để trống");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txb_class.Text))
+            {
+                MessageBox.Show("Lớp không được để trống");
+                return;
+            }
+
+            if (bindingList.Any(lopA => lopA.MaSinhVien == txb_code.Text))
+            {
+                MessageBox.Show("Mã sinh viên đã tồn tại. Hãy nhập mã khác!");
+                return;
+            }
+
+            bindingList.Add(new Student(txb_code.Text, txb_name.Text, txb_class.Text, (double)num_toan.Value, (double)num_anhvan.Value, (double)num_tin.Value));
         }
     }
 }
