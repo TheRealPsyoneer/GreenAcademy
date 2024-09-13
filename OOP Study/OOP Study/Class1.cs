@@ -11,9 +11,66 @@ namespace OOP_Study
         public string MaSinhVien { get;private set; }
         public string HoTen { get; private set; }
         public string Lop { get; private set; }
-        public double Toan { get; private set; }
-        public double AnhVan { get; private set; }
-        public double Tin { get; private set; }
+        private double toan;
+        public double Toan
+        {
+            get { return toan; }
+            set
+            {
+                if (value < 0)
+                {
+                    toan = 0;
+                }
+                else if (value > 10)
+                {
+                    toan = 10;
+                }
+                else
+                {
+                    toan = value;
+                }
+            }
+        }
+        private double anhVan;
+        public double AnhVan
+        {
+            get { return anhVan; }
+            set
+            {
+                if (value < 0)
+                {
+                    anhVan = 0;
+                }
+                else if (value > 10)
+                {
+                    anhVan = 10;
+                }
+                else
+                {
+                    anhVan = value;
+                }
+            }
+        }
+        private double tin;
+        public double Tin
+        {
+            get { return tin; }
+            set
+            {
+                if (value < 0)
+                {
+                    tin = 0;
+                }
+                else if (value > 10)
+                {
+                    tin = 10;
+                }
+                else
+                {
+                    tin = value;
+                }
+            }
+        }
         public double DiemTrungBinh => Math.Round((Toan + AnhVan + Tin) / 3, 1);
         public string XepLoai
         {
@@ -33,19 +90,20 @@ namespace OOP_Study
         }
         string XepLoaiHoc(double dtb)
         {
-            if (dtb >= 8)
+            double diemTB = dtb;
+            if (diemTB >= 8)
             {
                 return "Giỏi";
             }
-            else if (dtb >= 6.5)
+            else if (diemTB >= 6.5)
             {
                 return "Khá";
             }
-            else if (dtb >= 5)
+            else if (diemTB >= 5)
             {
                 return "Trung bình";
             }
-            else if (dtb >= 3.5)
+            else if (diemTB >= 3.5)
             {
                 return "Yếu";
             }
