@@ -26,7 +26,7 @@ namespace OOP_Study
             {
                 if (sinhViens.Any(Student => Student.MaSinhVien == form.sinhVienMoi.MaSinhVien))
                 {
-                    MessageBox.Show("Mã sinh viên đã tồn tại");
+                    MessageBox.Show("Mã sinh viên đã tồn tạia");
                     return;
                 }
                 sinhViens.Add(form.sinhVienMoi);
