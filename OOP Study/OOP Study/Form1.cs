@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json;
 
 namespace OOP_Study
 {
@@ -26,11 +27,32 @@ namespace OOP_Study
             {
                 if (sinhViens.Any(Student => Student.MaSinhVien == form.sinhVienMoi.MaSinhVien))
                 {
-                    MessageBox.Show("Mã sinh viên đã tồn tạia");
+                    MessageBox.Show("Mã sinh viên đã tồn tại");
                     return;
                 }
                 sinhViens.Add(form.sinhVienMoi);
+
             }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView1.CurrentRow.Index;
+            if (index >= 0)
+            {
+                string message = $"Bạn chắc chắn muốn xóa thông tin của sinh viên \"{sinhViens[index].HoTen}\" ở lớp {sinhViens[index].Lop} không?";
+                var result = MessageBox.Show(message, "Xóa thông tin sinh viên", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    sinhViens.RemoveAt(index);
+                }
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView1.CurrentRow.Index;
+
         }
     }
 }
