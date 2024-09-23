@@ -43,9 +43,33 @@ namespace OOP_Study
         {
             var mess = "";
 
-            if (editMath.Value != (decimal)data.Toan)
+            if ((double)editMath.Value != data.Toan)
             {
-                
+                mess = Environment.NewLine + $"Điểm Toán thay đổi từ {data.Toan} thành {editMath.Value}";
+            }
+
+            if ((double)editEnglish.Value != data.AnhVan)
+            {
+                mess += Environment.NewLine + $"Điểm Anh Văn thay đổi từ {data.AnhVan} thành {editEnglish.Value}";
+            }
+
+            if ((double)editTin.Value != data.Tin)
+            {
+                mess += Environment.NewLine + $"Điểm Tin thay đổi từ {data.Tin} thành {editTin.Value}";
+            }
+
+            if (string.IsNullOrEmpty(mess))
+            {
+                MessageBox.Show("Không có thông tin nào thay đổi!");
+            }
+            else
+            {
+                var confirm = MessageBox.Show(mess, $"Cập nhật thông tin sinh viên {data.HoTen} ở lớp {data.Lop}", MessageBoxButtons.OKCancel);
+                if (confirm == DialogResult.OK)
+                {
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
             }
         }
     }
